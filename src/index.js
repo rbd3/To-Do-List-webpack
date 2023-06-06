@@ -21,7 +21,7 @@ const tasks = [
 ];
 
 function TaskList() {
-    for (let i = 0; i < tasks.length; i += 1) {
+  for (let i = 0; i < tasks.length; i += 1) {
     const card = document.createElement('div');
     card.classList.add('card-body');
     card.innerHTML = `
