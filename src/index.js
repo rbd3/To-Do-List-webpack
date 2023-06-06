@@ -21,17 +21,17 @@ const tasks = [
 ];
 
 function TaskList() {
-  for (let i = 0; i < tasks.length; i += 1) {
-   const card = document.createElement('div');
-   card.classList.add('card-body');
-  card.innerHTML = `
+    for (let i = 0; i < tasks.length; i += 1) {
+    const card = document.createElement('div');
+    card.classList.add('card-body');
+    card.innerHTML = `
       <ul class="card-sub">
       <li><input type="checkbox" ${tasks[i].completed ? 'checked' : ''}></li>
       <li>${tasks[i].description}<i class="fas fa-ellipsis-v display"></i></li>
 
       </ul>
  `;
- task.appendChild(card);
-  } 
+    task.appendChild(card);
+  }
 }
 TaskList();
