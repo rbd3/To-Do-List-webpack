@@ -1,11 +1,37 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  return element;
-}
+const task = document.getElementsByClassName('tasks')[0];
 
-document.body.appendChild(component());
+const tasks = [
+  {
+    id: 0,
+    description: 'Wash the dishes',
+    completed: false,
+  },
+  {
+    id: 0,
+    description: 'complete To Do list project',
+    completed: false,
+  },
+  {
+    id: 0,
+    description: 'To do today',
+    completed: false,
+  },
+];
+
+function TaskList() {
+  for (let i = 0; i < tasks.length; i += 1) {
+    const card = document.createElement('div');
+    card.classList.add('card-body');
+    card.innerHTML = `
+      <ul class="card-sub">
+      <li><input type="checkbox" ${tasks[i].completed ? 'checked' : ''}></li>
+      <li>${tasks[i].description}<i class="fas fa-ellipsis-v display"></i></li>
+
+      </ul>
+ `;
+    task.appendChild(card);
+  }
+}
+TaskList();
